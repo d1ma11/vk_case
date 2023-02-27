@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="long_nickname">A very long name that does not fit here in any way</string>
+    <string name="short_nickname">You</string>
+    <string name="test_message">Привет</string>
+    <string name="back">Back</string>
+</resources>

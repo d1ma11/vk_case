@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="#19191A"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_main__leftLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_main__rightLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_main__central_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/activity_main__lower_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/activity_main__handButton" />
+
+    <TextView
+        android:id="@+id/activity_main__your_textview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_for_customer"
+        android:ellipsize="end"
+        android:gravity="center|bottom"
+        android:maxLines="1"
+
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="2dp"
+        android:scrollHorizontally="true"
+
+        android:text="@string/short_nickname"
+        android:textColor="@color/font_white1"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/activity_main__central_line"
+        app:layout_constraintEnd_toEndOf="@id/activity_main__rightLine"
+        app:layout_constraintStart_toStartOf="@id/activity_main__leftLine"
+        app:layout_constraintTop_toBottomOf="@id/activity_main__groupButton" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/activity_main__your_avatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/legolas"
+
+        app:civ_border_color="@color/font_white"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/activity_main__central_line"
+        app:layout_constraintEnd_toEndOf="@id/activity_main__rightLine"
+
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="@id/activity_main__leftLine"
+        app:layout_constraintTop_toBottomOf="@id/activity_main__groupButton"
+        app:layout_constraintWidth_percent="0.20" />
+
+    <TextView
+        android:id="@+id/activity_main__text2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_for_customer"
+
+        android:ellipsize="end"
+        android:gravity="center|bottom"
+        android:maxLines="1"
+        android:paddingStart="16dp"
+
+        android:paddingEnd="16dp"
+        android:paddingBottom="2dp"
+        android:scrollHorizontally="true"
+
+        android:text="@string/long_nickname"
+        android:textColor="@color/font_white1"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/activity_main__lower_line"
+        app:layout_constraintEnd_toEndOf="@id/activity_main__rightLine"
+        app:layout_constraintStart_toStartOf="@id/activity_main__leftLine"
+        app:layout_constraintTop_toTopOf="@+id/activity_main__central_line" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/activity_main__another_avatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:foregroundGravity="center"
+        android:src="@drawable/frodo"
+
+        app:civ_border_color="@color/font_white"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/activity_main__text2"
+        app:layout_constraintEnd_toEndOf="@id/activity_main__rightLine"
+
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="@id/activity_main__leftLine"
+        app:layout_constraintTop_toTopOf="@id/activity_main__central_line"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <ImageButton
+        android:id="@+id/activity_main__micButton"
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_for_mic_and_videocam"
+        android:onClick="buttonPressedOffMic"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/activity_main__cameraButton"
+        app:layout_constraintStart_toStartOf="@id/activity_main__leftLine"
+
+        app:srcCompat="@drawable/mic_off_black_48dp" />
+
+    <ImageButton
+        android:id="@+id/activity_main__cameraButton"
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_for_mic_and_videocam"
+        android:onClick="buttonPressedOffCam"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/activity_main__handButton"
+        app:layout_constraintStart_toEndOf="@id/activity_main__micButton"
+
+        app:srcCompat="@drawable/videocam_off_black_48dp" />
+
+    <ImageButton
+        android:id="@+id/activity_main__handButton"
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_for_hand"
+        android:onClick="greetingButton"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/activity_main__telephoneButton"
+        app:layout_constraintStart_toEndOf="@id/activity_main__cameraButton"
+
+        app:srcCompat="@drawable/back_hand_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/activity_main__telephoneButton"
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_for_telephone"
+        android:onClick="onBackPressed"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/activity_main__rightLine"
+        app:layout_constraintStart_toEndOf="@id/activity_main__handButton"
+
+        app:srcCompat="@drawable/call_end_white_48dp" />
+
+    <ImageButton
+        android:id="@+id/activity_main__messageButton"
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/unltimate_shape"
+        app:layout_constraintEnd_toStartOf="@id/activity_main__groupButton"
+
+        app:layout_constraintStart_toStartOf="@id/activity_main__leftLine"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chat_bubble_outline_white_24dp" />
+
+    <ImageButton
+        android:id="@+id/activity_main__groupButton"
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/unltimate_shape"
+        android:onClick="onClick"
+
+        app:layout_constraintEnd_toEndOf="@id/activity_main__WindowsButton"
+        app:layout_constraintStart_toEndOf="@id/activity_main__messageButton"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/people_alt_white_24dp" />
+
+    <ImageButton
+        android:id="@+id/activity_main__WindowsButton"
+        android:layout_width="60dp"
+
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/unltimate_shape"
+        android:onClick="switchViews"
+
+        app:layout_constraintEnd_toEndOf="@id/activity_main__rightLine"
+        app:layout_constraintStart_toEndOf="@id/activity_main__groupButton"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/table_view_white_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
